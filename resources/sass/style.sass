@@ -1,0 +1,102 @@
+@font-face
+	font-family: 'TIMSans'
+	src: url('../fonts/TIMSansWeb-Light.eot')
+	src: url('../fonts/TIMSansWeb-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/TIMSansWeb-Light.woff2') format('woff2'), url('../fonts/TIMSansWeb-Light.woff') format('woff'), url('../fonts/TIMSansWeb-Light.ttf') format('truetype'), url('../fonts/TIMSansWeb-Light.svg#TIMSansWeb-Light') format('svg')
+	font-weight: 300
+	font-style: normal
+
+@font-face
+	font-family: 'TIMSans'
+	src: url('../fonts/TIMSansWeb-Regular.eot')
+	src: url('../fonts/TIMSansWeb-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/TIMSansWeb-Regular.woff') format('woff'),url('../fonts/TIMSansWeb-Regular.ttf') format('truetype'),url('../fonts/TIMSansWeb-Regular.svg#TIMSansWeb-Regular') format('svg')
+	font-weight: 500
+	font-style: normal
+
+@font-face
+	font-family: 'TIMSans'
+	src: url('../fonts/TIMSansWeb-Medium.eot')
+	src: url('../fonts/TIMSansWeb-Medium.eot?#iefix') format('embedded-opentype'),url('../fonts/TIMSansWeb-Medium.woff2') format('woff2'),url('../fonts/TIMSansWeb-Medium.woff') format('woff'),url('../fonts/TIMSansWeb-Medium.ttf') format('truetype'),url('../fonts/TIMSansWeb-Medium.svg#TIMSansWeb-Medium') format('svg')
+	font-weight: 600
+	font-style: normal
+
+.hide
+	display: none
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	line-height: 1
+	font-family: "TIMSans", Arial, helvetica, sans-serif
+	font-weight: 500
+	transition: all ease 0.4s
+
+.tim-bar
+	background: #004279
+	height: 35px
+	border-bottom: 1px solid #4599C3
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 0px 5px
+	> img
+		max-height: 18px
+	div
+		margin-right: 10px
+		a
+			color: white
+			opacity: 0.6
+			font-size: 12px
+			text-decoration: none
+			margin-left: 16px
+			padding-left: 40px
+			border-left: 1px solid white
+			background-repeat: no-repeat
+			&:hover
+				opacity: 1
+				border-left: 1px solid rgba(255,255,255,0.6)
+		.loja
+			background-image: url('../img/cabecalho-icone-loja.png')
+			background-size: 16px 13px
+			background-position: 12px 0px
+		.meu-tim
+			background-image: url('../img/cabecalho-icone-meu.png')
+			background-size: 13px 14px
+			background-position: 14px 0px
+		.tim-site
+			background-image: url('../img/cabecalho-icone-tim.png')
+			background-size: 18px 13px
+			background-position: 12px 0px
+.widget
+	background: url('../img/background-home.png') top left no-repeat
+	background-size: cover
+	min-height: calc(100vh - 35px)
+	position: relative
+	text-align: right
+	> img
+		position: absolute
+		bottom: 0
+		left: 10%
+		width: 96%
+		max-width: 575px
+	div
+		width: 100%
+		max-width: 360px
+		padding: 10px
+		text-align: center
+		float: right
+		margin-right: 10%
+		margin-top: 50px
+		img
+			max-width: 170px
+			margin-bottom: 20px
+		p
+			color: white
+			font-size: 20px
+			line-height: 1.4
+		h4
+			font-size: 26px
+			line-height: 1.2
+		span
+			color: #ffdd00
+

@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="resources/css/style.css">
   </head>
   <body>
-    <section class="widget"></section>
+    <div class="tim-bar"><img src="resources/img/logo-tim.png">
+      <div><a class="loja" href="http://loja.tim.com.br/" target="blank">LOJA ONLINE</a><a class="meu-tim" href="https://meutim.tim.com.br/" target="blank">MEU TIM</a><a class="tim-site" href="http://www.tim.com.br/" target="blank">TIM.COM.BR</a></div>
+    </div>
+    <section class="widget"><img src="resources/img/claude.png" alt="claude troisgros">
+      <div><img src="resources/img/icon.png" alt="icone tim gourmet">
+        <p>Traga as receitas do chef 
+          <h4> <span>Claude Troisgros </span></h4>
+        </p>
+        <p>para sua casa, tenha acesso ao maior app de Delivery do Brasil e ainda<br>
+          <h4><span>concorra a uma refeição com ele!</span></h4>
+        </p>
+        <form name="assine" action="#springUrl( $subscriptionURL )" method="post" onsubmit="return validate();">
+          <div class="hide">
+            #if( $hiddenFieldsMap.entrySet() )
+            #foreach($hiddenField in $hiddenFieldsMap.entrySet())
+            <input type="hidden" name="$hiddenField.key" value="$hiddenField.value">
+                          #end
+                          #end
+          </div>
+          <input class="text ddd" id="ddd" type="text" maxlength="2" name="ddd" placeholder="DDD" onkeyup="proximoCampo(this, 'tel')">
+          <input class="text tel" id="phone" type="text" maxlength="9" name="phone" placeholder="Telefone">
+          <div class="center-termos">
+            <input id="check" type="checkbox" name="check">
+            <label for="check"><span></span>Li e aceito os <a href="termos.html">termos e condições de uso</a></label>
+          </div>
+          <input class="mobile-btn" id="sendPin" type="button" value="ASSINAR" name="sendPin" onclick="validate();">
+          <h1>Valor do serviço de R$ 3,99 por semana.<br><br><b>Experimente grátis por 3 dias.</b></h1>
+        </form>
+      </div>
+    </section>
     <section class="about"></section>
     <section class="feature feature-1"></section>
     <section class="feature feature-2"></section>
