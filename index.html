@@ -12,9 +12,12 @@
       <div><a class="loja" href="http://loja.tim.com.br/" target="blank">LOJA ONLINE</a><a class="meu-tim" href="https://meutim.tim.com.br/" target="blank">MEU TIM</a><a class="tim-site" href="http://www.tim.com.br/" target="blank">TIM.COM.BR</a></div>
     </div>
     <div class="menu"><a href="regulamento">Regulamento</a><a href="regulamento">Números da sorte</a><a href="regulamento">Ganhadores</a><a href="faw">FAQ</a></div>
-    <section class="widget"><img src="resources/img/claude.png" alt="claude troisgros">
+    <section class="widget">
       <div><img src="resources/img/icon.png" alt="icone tim gourmet">
-        <p>Traga as receitas do chef <span>Claude Troisgros </span>para sua casa, tenha acesso ao maior app de Delivery do Brasil e ainda <span>concorra a uma refeição com ele!</span></p>
+        <p> 
+          Traga as receitas do chef Claude Troisgros 
+          para sua casa e ainda <span>concorra a uma refeição com ele. </span>
+        </p>
         <form name="assine" action="#springUrl( $subscriptionURL )" method="post" onsubmit="return validate();">
           <div class="hide">
             #if( $hiddenFieldsMap.entrySet() )
@@ -23,16 +26,16 @@
                           #end
                           #end
           </div>
-          <input class="text ddd" id="ddd" type="tel" maxlength="2" name="ddd" placeholder="DDD" onkeyup="proximoCampo(this, 'tel')">
+          <input class="text ddd" id="ddd" type="tel" maxlength="2" name="ddd" placeholder="DDD" onkeyup="proximoCampo(this, 'phone')">
           <input class="text tel" id="phone" type="tel" maxlength="9" name="phone" placeholder="Telefone">
           <div class="center-termos">
             <input id="check" type="checkbox" name="check">
             <label for="check"><span></span>Li e aceito os <a href="termos.html">termos e condições de uso</a></label>
           </div>
           <input class="mobile-btn" id="sendPin" type="button" value="ASSINAR" name="sendPin" onclick="validate();">
-          <h5>Valor do serviço de R$ 3,99 por semana.<br><span>Experimente grátis por 3 dias.</span></h5>
+          <h5>Valor do serviço de R$ 3,99 por semana.<br><span>Experimente grátis por 3 dias.</span></h5><img src="resources/img/playstore-badge.png" alt="">
         </form>
-      </div>
+      </div><img src="resources/img/claude.png" alt="claude troisgros">
     </section>
     <div class="content">
       <section class="about" style="background-color: #00A5CC">
@@ -49,38 +52,42 @@
           </div>
         </div>
       </section>
-      <section class="feature feature-1" style="background-image: url(resources/img/background-box1.png)">
+      <section class="feature feature-1">
         <div class="container">
-          <div><img src="resources/img/icon-pan.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/icon-pan.png" alt="Tela TIM Gourmet">
             <h1>Tenha receitas do Claude Troisgros</h1>
+            <h1 class="mobile">Conheça os segredos do chef Claude Troisgros e surpreenda na cozinha!</h1>
             <p>Fique por dentro dos segredos de culinária do chef Claude Troisgros e surpreenda na cozinha! Saboreie já as novas tendências do mundo da gastronomia!</p>
           </div>
           <div class="img"><img src="resources/img/nexus-feature1.png" alt="Tela TIM Gourmet"></div>
         </div>
       </section>
-      <section class="feature feature-2" style="background-image: url(resources/img/background-box2.png)">
+      <section class="feature feature-2">
         <div class="container">
           <div class="img"><img src="resources/img/nexus-feature2.png" alt="Tela TIM Gourmet"></div>
-          <div><img src="resources/img/ifood.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/ifood.png" alt="Tela TIM Gourmet">
             <h1>Está cansado? Peça um Delivery!</h1>
+            <h1 class="mobile">Deu preguiça? Peça comida e a receba em sua casa pelo maior app de delivery do Brasil.</h1>
             <p>Com o TIM gourmet Delivery, você poderá pedir comida e ela chegar na sua casa! Quer praticidade maior do que isso?</p>
           </div>
         </div>
       </section>
-      <section class="feature feature-3" style="background-image: url(resources/img/background-box3.png)">
+      <section class="feature feature-3">
         <div class="container">
-          <div><img src="resources/img/icon-home.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/icon-home.png" alt="Tela TIM Gourmet">
             <h1>Dicas dos melhores restaurantes</h1>
+            <h1 class="mobile">Conheça os melhores restaurantes da sua região.</h1>
             <p>Quer sair pra jantar e não sabe em qual lugar? O TIM gourmet te ajuda mostrando quais são os restaurantes mais próximos de você e as informações deles quanto a horário de funcionamento, preço… imperdível!</p>
           </div>
           <div class="img"><img src="resources/img/nexus-feature3.png" alt="Tela TIM Gourmet"></div>
         </div>
       </section>
-      <section class="feature feature-4" style="background-image: url(resources/img/background-box4.png)">
+      <section class="feature feature-4">
         <div class="container">
           <div class="img"><img src="resources/img/nexus-feature4.png" alt="Tela TIM Gourmet"></div>
-          <div><img src="resources/img/icon-note.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/icon-note.png" alt="Tela TIM Gourmet">
             <h1>Conteúdo de eventos gastronômicos</h1>
+            <h1 class="mobile">O TIM Gourmet ainda mostra os eventos que estão próximos de você</h1>
             <p>Fique sabendo quais são os melhores eventos gastronômicos que vão estar na sua cidade ou próximo a você!</p>
           </div>
         </div>
@@ -95,5 +102,50 @@
         <p>Copyright TIM Celular 2015 - Todos os direitos reservados.</p><span>Títulos de Capitalização da modalidade incentivo emitidos por Sul América Capitalização S.A , CNPJ nº 03.558.096/0001-04 e Processo SUSEP nº 15414.900879/2013-20. Sugestões de uso dos prêmios nos valores totais de R$ 500,00 e R$ 30.000,00, líquidos de IR. A aprovação deste Título pela SUSEP não implica, por parte da Autarquia, em incentivo ou recomendação a sua aquisição, representando, exclusivamente, sua adequação às normas em vigor. Leia o Regulamento completo no site. Imagens meramente ilustrativas. Ouvidoria Sulamérica 0800 725 3374</span>
       </div>
     </footer>
+    <script type="text/javascript">
+      function toUnicode(elmnt,content){
+      	if (content.length==elmnt.maxLength){
+      		next=elmnt.tabIndex
+      		if (next<document.forms[0].elements.length){
+      			document.forms[0].elements[next].focus()
+      		}
+      	}
+      }
+      function validatePhone(numeroddd, numerocelular) {
+      	if (numeroddd == '' || numerocelular == '') {
+      		return false;
+      	}
+      	return true;
+      }
+      function validate(){
+      	var ddd = document.getElementById('ddd').value;
+      	var celular = document.getElementById('phone').value;
+      	var checkAccept = document.getElementById('check');
+      	if (!validatePhone(ddd, phone)) {
+      		alert('Informe seu número corretamente.');
+      		return false;
+      	}
+      	if (checkAccept != null && !checkAccept.checked) {
+      		alert('Por favor, aceite o termo de uso para continuar.');
+      		return false;
+      	}
+      	document.assine.submit();
+      }
+    </script>
+    <script type="text/javascript">
+      function proximoCampo(atual,proximo){
+      	if(atual.value.length >= atual.maxLength){
+      		document.getElementById(proximo).focus();
+      	}
+      }
+    </script>
+    <div class="hide">
+      #if( $pixel )
+      $pixel
+      #end
+      #if( $analytics )
+      $analytics
+      #end	
+    </div>
   </body>
 </html>

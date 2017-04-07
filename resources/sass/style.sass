@@ -98,7 +98,7 @@ body
 		bottom: 0
 		left: 10%
 		width: 96%
-		max-width: 40%
+		max-width: 570px
 	> div
 		width: 100%
 		max-width: 350px
@@ -111,13 +111,14 @@ body
 			margin-bottom: 20px
 		p
 			color: white
-			font-size: 18px
+			font-size: 21px
 			line-height: 1.4
 		h4
 			font-size: 2.4rem
 			line-height: 1.2
 		span
 			color: #ffdd00
+			// color: #fff0c3
 			font-weight: 700
 	form
 		margin-top: 10px
@@ -128,6 +129,8 @@ body
 			height: 40px
 			font-size: 1.6rem
 			padding: 5px
+		img
+			margin-top: 10px
 		#ddd
 			width: calc(30% - 5px)
 		#phone
@@ -164,6 +167,8 @@ body
 		color: white
 		font-weight: 700
 		line-height: 1.25
+	.mobile
+		display: none
 	p
 		margin-top: 10px
 		font-size: 2.0rem
@@ -172,6 +177,9 @@ body
 		color: white
 		b
 			font-weight: 700
+@for $i from 1 through 4
+	.feature-#{$i}
+		background-image: url('../img/background-box'+$i+'.png')
 .container
 	width: 100%
 	max-width: 1200px
@@ -211,13 +219,13 @@ footer
 	.container
 		flex-direction: column
 		max-width: 800px
+		align-items: flex-start
 	span
 		color: white
 	.tim-na-rede
 		display: flex
 		align-items: center
-		justify-content: center
-		margin: 0 auto
+		justify-content: flex-start
 	a.rede
 		display: inline-block
 		background-image: url(../img/social.png)
@@ -233,6 +241,7 @@ footer
 	p
 		color: white
 		font-size: 1.6rem
+		line-height: 1.5
 		margin: 15px 0px
 	span
 		font-size: 1.2rem
@@ -306,16 +315,30 @@ footer
 	.widget
 		align-items: center
 		justify-content: center
+		flex-direction: column
 		background: #8b7865
 		> div
 			margin-right: 0
-			margin-top: 40px 
+			margin-top: 60px 
 		> img
-			display: none
+			position: relative
+			max-width: 90%
 	.container
 		padding: 20px
 		div
 			width: 100%
+	.content
+		section
+			.container
+				.img
+					margin: 20px auto -80px auto
+	.about
+		display: none
+	.feature
+		background: #00A5CC
+		border-bottom: 1px solid white
+		h1, p
+			color: white
 @media (max-width: 510px)
 	html
 		font-size: 9px
@@ -325,12 +348,34 @@ footer
 				div
 					width: 100%
 @media (max-width: 430px)
+	html
+		font-size: 8px
+	.widget
+		> div
+			margin: 30px 0px 
+			img
+				width: 100px
+			p
+				font-size: 19px
+	.tim-bar
+		div
+			display: none
 	.menu
 		display: none
+	.container
+		img
+			width: 60px
+	.feature
+		h1, p
+			display: none
+		.mobile
+			display: block
 	footer
 		padding: 0px 0px
 		.menu
 			display: block
+		span
+			font-size: 1.4rem
 @media (max-width: 414px)
 	.about
 		.container
