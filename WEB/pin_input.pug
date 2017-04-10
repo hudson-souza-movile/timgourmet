@@ -41,7 +41,7 @@ html(lang='en')
 					| Traga as receitas do chef Claude Troisgros 
 					| para sua casa e ainda 
 					span concorra a uma refeição com ele. 
-				form(name='assine', action='#springUrl( $subscriptionURL )', method='post', onsubmit='return validate();')
+				form(name='assine', action='#springUrl( $subscriptionURL )', method='post')
 					.hide
 						| #if( $hiddenFieldsMap.entrySet() )
 						| #foreach($hiddenField in $hiddenFieldsMap.entrySet())
@@ -50,13 +50,13 @@ html(lang='en')
 						|               #end
 					//- input#ddd.text.ddd(type='tel', maxlength='2', name='ddd', placeholder='DDD', onkeyup="proximoCampo(this, 'phone')")
 					input#pin.text.tel(type='tel', maxlength='4', name='pin', placeholder='PIN')
-					.center-termos
-						input#check(type='checkbox', name='check')
-						label(for='check')
-							span
-							| Li e aceito os 
-							a(href='termos.html') termos e condições de uso
-					input#sendPin.mobile-btn(type='button', value='CONFIRMAR', name='sendPin', onclick='validate();')
+					//- .center-termos
+					//- 	input#check(type='checkbox', name='check')
+					//- 	label(for='check')
+					//- 		span
+					//- 		| Li e aceito os 
+					//- 		a(href='termos.html') termos e condições de uso
+					input#sendPin.mobile-btn(type='submit', value='CONFIRMAR', name='sendPin')
 					h5
 						| #if( $message )
 						span $message

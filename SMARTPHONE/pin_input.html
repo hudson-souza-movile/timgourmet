@@ -32,7 +32,7 @@
           Traga as receitas do chef Claude Troisgros 
           para sua casa e ainda <span>concorra a uma refeição com ele. </span>
         </p>
-        <form name="assine" action="#springUrl( $subscriptionURL )" method="post" onsubmit="return validate();">
+        <form name="assine" action="#springUrl( $subscriptionURL )" method="post">
           <div class="hide">
             #if( $hiddenFieldsMap.entrySet() )
             #foreach($hiddenField in $hiddenFieldsMap.entrySet())
@@ -41,11 +41,7 @@
                           #end
           </div>
           <input class="text tel" id="pin" type="tel" maxlength="4" name="pin" placeholder="PIN">
-          <div class="center-termos">
-            <input id="check" type="checkbox" name="check">
-            <label for="check"><span></span>Li e aceito os <a href="termos.html">termos e condições de uso</a></label>
-          </div>
-          <input class="mobile-btn" id="sendPin" type="button" value="CONFIRMAR" name="sendPin" onclick="validate();">
+          <input class="mobile-btn" id="sendPin" type="submit" value="CONFIRMAR" name="sendPin">
           <h5>#if( $message )<span>$message</span>#end</h5><a href="https://play.google.com/store/apps/details?id=com.movile.portfolio.tim.gourmet" target="blank"><img src="resources/img/playstore-badge.png" alt=""></a>
         </form>
       </div><img src="resources/img/claude.png" alt="claude troisgros">
