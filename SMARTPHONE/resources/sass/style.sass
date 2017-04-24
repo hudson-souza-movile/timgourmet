@@ -35,6 +35,16 @@ html
 body
 	position: relative
 	font-size: 10px
+.nav-block
+	position: absolute
+	opacity: 0
+	font-size: 14px
+	padding: 10px
+	background: white
+	color: #00A5CC
+.nav-block:focus
+	position: relative
+	opacity: 1
 .tim-bar
 	background: #004279
 	height: 35px
@@ -43,14 +53,14 @@ body
 	align-items: center
 	justify-content: space-between
 	padding: 0px 5px
-	> img
-		max-height: 18px
+	.logo-tim
+		max-height: 20px
 	div
 		margin-right: 10px
 		a
 			color: white
 			opacity: 0.6
-			font-size: 1.2rem
+			font-size: 1.5rem
 			text-decoration: none
 			margin-left: 16px
 			padding-left: 40px
@@ -150,7 +160,7 @@ body
 			background: #8EC359
 			color: white
 			cursor: pointer
-		h5
+		.valor
 			margin-top: 15px
 			font-size: 1.6rem
 			color: white

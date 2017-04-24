@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8">
     <title>TIM Gourmet</title>
@@ -17,12 +17,12 @@
     <!-- End Google Tag Manager-->
     <!-- Google Tag Manager (noscript)-->
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFC7RF3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFC7RF3" style="display:none;visibility:hidden" title="tag Manager"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript)-->
   </head>
-  <body>
-    <div class="tim-bar"><img src="resources/img/logo-tim.png" alt="Logotipo TIM">
+  <body><a class="nav-block" href="#assinar">Pular para o formulário de assinatura</a>
+    <div class="tim-bar"><a href="subscription.html"><img class="logo-tim" src="resources/img/logo-tim.png" alt="Logotipo TIM"></a>
       <div><a class="loja" href="http://loja.tim.com.br/" target="blank">LOJA ONLINE</a><a class="meu-tim" href="https://meutim.tim.com.br/" target="blank">MEU TIM</a><a class="tim-site" href="http://www.tim.com.br/" target="blank">TIM.COM.BR</a></div>
     </div>
     <div class="menu"><a href="regulamento">Regulamento</a><a href="numeros-sorte">Números da sorte</a><a href="ganhadores">Ganhadores</a><a href="faq">FAQ</a></div>
@@ -32,7 +32,7 @@
           Traga as receitas do chef Claude Troisgros 
           para sua casa e ainda <span>concorra a uma refeição com ele. </span>
         </p>
-        <form name="assine" action="#springUrl( $subscriptionURL )" method="post" onsubmit="return validate();">
+        <form id="assinar" name="assine" action="#springUrl( $subscriptionURL )" method="post" onsubmit="return validate();">
           <div class="hide">
             #if( $hiddenFieldsMap.entrySet() )
             #foreach($hiddenField in $hiddenFieldsMap.entrySet())
@@ -46,13 +46,13 @@
             <input id="check" type="checkbox" name="check">
             <label for="check"><span></span>Li e aceito os <a href="termos.html">termos e condições de uso</a></label>
           </div>
-          <input class="mobile-btn" id="sendPin" type="button" value="ASSINAR" name="sendPin" onclick="validate();">
-          <h5>Valor do serviço de R$ 3,99 por semana.<br><span>Experimente grátis por 3 dias.</span></h5><a href="https://play.google.com/store/apps/details?id=com.movile.portfolio.tim.gourmet" target="blank"><img src="resources/img/playstore-badge.png" alt="ícone de download na Play Store"></a>
+          <input class="mobile-btn" id="sendPin" type="submit" value="ASSINAR" name="sendPin" onclick="validate();">
+          <p class="valor">Valor do serviço de R$ 3,99 por semana.<br><span>Experimente grátis por 3 dias.</span></p><a href="https://play.google.com/store/apps/details?id=com.movile.portfolio.tim.gourmet" target="blank"><img src="resources/img/playstore-badge.png" alt="ícone de download na Play Store"></a>
         </form>
       </div><img src="resources/img/claude.png" alt="Chef Claude Troisgros">
     </section>
     <div class="content">
-      <section class="about" style="background-color: #00A5CC">
+      <section class="about" style="background-color: #00A5CC"><a class="nav-block" href="#receitas">Pular para o Receitas</a>
         <div class="container">
           <div class="img"><img src="resources/img/nexus-about.png" alt="Tela ao aplicativo TIM Gourmet"></div>
           <div>
@@ -66,7 +66,7 @@
           </div>
         </div>
       </section>
-      <section class="feature feature-1">
+      <section class="feature feature-1" id="receitas"><a class="nav-block" href="#ifood">Pular para iFood</a>
         <div class="container">
           <div><img class="icon" src="resources/img/icon-pan.png" alt="ícone de panela">
             <h1>Tenha receitas do Claude Troisgros</h1>
@@ -76,7 +76,7 @@
           <div class="img"><img src="resources/img/nexus-feature1.png" alt="Tela TIM Gourmet"></div>
         </div>
       </section>
-      <section class="feature feature-2">
+      <section class="feature feature-2" id="ifood"><a class="nav-block" href="#dicas">Pular para Dicas</a>
         <div class="container">
           <div class="img"><img src="resources/img/nexus-feature2.png" alt="Tela TIM Gourmet"></div>
           <div><img class="icon" src="resources/img/ifood.png" alt="Logotipo iFood">
@@ -86,7 +86,7 @@
           </div>
         </div>
       </section>
-      <section class="feature feature-3">
+      <section class="feature feature-3" id="dicas"><a class="nav-block" href="#eventos">Pular para Eventos</a>
         <div class="container">
           <div><img class="icon" src="resources/img/icon-home.png" alt="Ícone Restaurante">
             <h1>Dicas dos melhores restaurantes</h1>
@@ -96,7 +96,7 @@
           <div class="img"><img src="resources/img/nexus-feature3.png" alt="Tela TIM Gourmet"></div>
         </div>
       </section>
-      <section class="feature feature-4">
+      <section class="feature feature-4" id="eventos"><a class="nav-block" href="#footer">Pular para Rodapé</a>
         <div class="container">
           <div class="img"><img src="resources/img/nexus-feature4.png" alt="Tela TIM Gourmet"></div>
           <div><img class="icon" src="resources/img/icon-note.png" alt="Ícone Calendário">
@@ -107,11 +107,11 @@
         </div>
       </section>
     </div>
-    <footer>
+    <footer id="footer">
       <div class="container">
-        <div class="menu"><a href="regulamento">Regulamento</a><a href="regulamento">Números da sorte</a><a href="regulamento">Ganhadores</a><a href="faw">FAQ</a></div>
+        <div class="menu"><a href="regulamento">Regulamento</a><a href="numeros-sorte">Números da sorte</a><a href="ganhadores">Ganhadores</a><a href="faq">FAQ</a></div>
         <div class="tim-na-rede">
-          <p>TIM na rede: </p><a class="rede" href="https://twitter.com/TIMbrasil" style="background-position: 0 0"></a><a class="rede" href="https://www.facebook.com/timbrasil" style="background-position: -32px 0"></a><a class="rede" href="http://www.youtube.com/TIM" style="background-position: -64px 0"></a>
+          <p>TIM na rede: </p><a class="rede" href="https://twitter.com/TIMbrasil" style="background-position: 0 0">twitter</a><a class="rede" href="https://www.facebook.com/timbrasil" style="background-position: -32px 0">facebook</a><a class="rede" href="http://www.youtube.com/TIM" style="background-position: -64px 0">youtube</a>
         </div>
         <p>Copyright TIM Celular 2017 - Todos os direitos reservados.</p><span>Títulos de Capitalização da modalidade incentivo emitidos por Sul América Capitalização S.A , CNPJ nº 03.558.096/0001-04 e Processo SUSEP nº 15414.900879/2013-20. Sugestões de uso dos prêmios nos valores totais de R$ 500,00 e R$ 30.000,00, líquidos de IR. A aprovação deste Título pela SUSEP não implica, por parte da Autarquia, em incentivo ou recomendação a sua aquisição, representando, exclusivamente, sua adequação às normas em vigor. Leia o Regulamento completo no site. Imagens meramente ilustrativas. Ouvidoria Sulamérica 0800 725 3374</span>
       </div>

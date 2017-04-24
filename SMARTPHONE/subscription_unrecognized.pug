@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='pt-br')
 	head
 		meta(charset='UTF-8')
 		title TIM Gourmet
@@ -16,11 +16,13 @@ html(lang='en')
 		// End Google Tag Manager
 		// Google Tag Manager (noscript)
 		noscript
-			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-WFC7RF3', height='0', width='0', style='display:none;visibility:hidden')
+			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-WFC7RF3', style='display:none;visibility:hidden', title='tag Manager')
 		// End Google Tag Manager (noscript)
 	body
+		a.nav-block(href="#assinar") Pular para o formulário de assinatura
 		.tim-bar
-			img(src='resources/img/logo-tim.png', alt='Logotipo TIM')
+			a(href='subscription.html')
+				img.logo-tim(src='resources/img/logo-tim.png', alt='Logotipo TIM')
 			div
 				a.loja(href="http://loja.tim.com.br/", target="blank") LOJA ONLINE
 				a.meu-tim(href="https://meutim.tim.com.br/", target="blank") MEU TIM
@@ -41,7 +43,7 @@ html(lang='en')
 					| Traga as receitas do chef Claude Troisgros 
 					| para sua casa e ainda 
 					span concorra a uma refeição com ele. 
-				form(name='assine', action='#springUrl( $subscriptionURL )', method='post', onsubmit='return validate();')
+				form#assinar(name='assine', action='#springUrl( $subscriptionURL )', method='post', onsubmit='return validate();')
 					.hide
 						| #if( $hiddenFieldsMap.entrySet() )
 						| #foreach($hiddenField in $hiddenFieldsMap.entrySet())
@@ -56,8 +58,8 @@ html(lang='en')
 							span
 							| Li e aceito os 
 							a(href='termos.html') termos e condições de uso
-					input#sendPin.mobile-btn(type='button', value='ASSINAR', name='sendPin', onclick='validate();')
-					h5
+					input#sendPin.mobile-btn(type='submit', value='ASSINAR', name='sendPin', onclick='validate();')
+					p.valor
 						| Valor do serviço de R$ 3,99 por semana.
 						br
 						span Experimente grátis por 3 dias.
@@ -66,6 +68,7 @@ html(lang='en')
 			img(src="resources/img/claude.png", alt="Chef Claude Troisgros")
 		.content
 			section.about(style='background-color: #00A5CC')
+				a.nav-block(href="#receitas") Pular para o Receitas
 				.container
 					div.img
 						img(src="resources/img/nexus-about.png", alt="Tela ao aplicativo TIM Gourmet")
@@ -90,7 +93,8 @@ html(lang='en')
 							| Após o período de 
 							span.destaque gratuidade de 3 dias
 							| , o valor do serviço é de R$ 3,99 por semana. Os custos do prato escolhido e da taxa de entrega no TIM gourmet Delivery não estão incluídos na assinatura do serviço.
-			section.feature.feature-1
+			section#receitas.feature.feature-1
+				a.nav-block(href="#ifood") Pular para iFood
 				.container
 					div
 						img.icon(src="resources/img/icon-pan.png", alt="ícone de panela")
@@ -99,7 +103,8 @@ html(lang='en')
 						p Fique por dentro dos segredos de culinária do chef Claude Troisgros e surpreenda na cozinha! Saboreie já as novas tendências do mundo da gastronomia!
 					div.img
 						img(src="resources/img/nexus-feature1.png", alt="Tela TIM Gourmet")
-			section.feature.feature-2
+			section#ifood.feature.feature-2
+				a.nav-block(href="#dicas") Pular para Dicas
 				.container
 					div.img
 						img(src="resources/img/nexus-feature2.png", alt="Tela TIM Gourmet")
@@ -108,7 +113,8 @@ html(lang='en')
 						h1 Está cansado? Peça um Delivery!
 						h1.mobile Deu preguiça? Peça comida e a receba em sua casa pelo maior app de delivery do Brasil.
 						p Com o iFood, integrado no TIM Gourmet, você poderá pedir comida e ela chegar na sua casa! Quer praticidade maior do que isso?
-			section.feature.feature-3
+			section#dicas.feature.feature-3
+				a.nav-block(href="#eventos") Pular para Eventos
 				.container
 					div
 						img.icon(src="resources/img/icon-home.png", alt="Ícone Restaurante")
@@ -117,7 +123,8 @@ html(lang='en')
 						p Quer sair pra jantar e não sabe em qual lugar? O TIM gourmet te ajuda mostrando quais são os restaurantes mais próximos de você e as informações deles quanto a horário de funcionamento, preço… imperdível!
 					div.img
 						img(src="resources/img/nexus-feature3.png", alt="Tela TIM Gourmet")
-			section.feature.feature-4
+			section#eventos.feature.feature-4
+				a.nav-block(href="#footer") Pular para Rodapé
 				.container
 					div.img
 						img(src="resources/img/nexus-feature4.png", alt="Tela TIM Gourmet")
@@ -126,18 +133,18 @@ html(lang='en')
 						h1 Conteúdo de eventos gastronômicos
 						h1.mobile O TIM Gourmet ainda mostra os eventos que estão próximos de você
 						p Fique sabendo quais são os melhores eventos gastronômicos que vão estar na sua cidade ou próximo a você!
-		footer
+		footer#footer
 			.container
 				.menu
 					a(href="regulamento") Regulamento
-					a(href="regulamento") Números da sorte
-					a(href="regulamento") Ganhadores
-					a(href="faw") FAQ
+					a(href="numeros-sorte") Números da sorte
+					a(href="ganhadores") Ganhadores
+					a(href="faq") FAQ
 				.tim-na-rede
 					p TIM na rede: 
-					a.rede(href="https://twitter.com/TIMbrasil", style='background-position: 0 0;')
-					a.rede(href="https://www.facebook.com/timbrasil", style='background-position: -32px 0;')
-					a.rede(href="http://www.youtube.com/TIM", style='background-position: -64px 0;')
+					a.rede(href="https://twitter.com/TIMbrasil", style='background-position: 0 0;') twitter
+					a.rede(href="https://www.facebook.com/timbrasil", style='background-position: -32px 0;') facebook
+					a.rede(href="http://www.youtube.com/TIM", style='background-position: -64px 0;') youtube
 				p Copyright TIM Celular 2017 - Todos os direitos reservados.
 				span Títulos de Capitalização da modalidade incentivo emitidos por Sul América Capitalização S.A , CNPJ nº 03.558.096/0001-04 e Processo SUSEP nº 15414.900879/2013-20. Sugestões de uso dos prêmios nos valores totais de R$ 500,00 e R$ 30.000,00, líquidos de IR. A aprovação deste Título pela SUSEP não implica, por parte da Autarquia, em incentivo ou recomendação a sua aquisição, representando, exclusivamente, sua adequação às normas em vigor. Leia o Regulamento completo no site. Imagens meramente ilustrativas. Ouvidoria Sulamérica 0800 725 3374
 		script(type='text/javascript').
