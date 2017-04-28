@@ -1,0 +1,99 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		title TIM Gourmet
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		link(rel='stylesheet', href='resources/css/style.css')
+		link(rel="shortcut icon", type="image/x-icon", href="resources/img/favicon.ico")
+		// Google Tag Manager
+		script.
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-WFC7RF3');
+		// End Google Tag Manager
+		// Google Tag Manager (noscript)
+		noscript
+			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-WFC7RF3', height='0', width='0', style='display:none;visibility:hidden')
+		// End Google Tag Manager (noscript)
+		script(type='text/javascript').
+			function toUnicode(elmnt,content){
+				if (content.length==elmnt.maxLength){
+					next=elmnt.tabIndex
+					if (next<document.forms[0].elements.length){
+						document.forms[0].elements[next].focus()
+					}
+				}
+			}
+			//- function alpha (div1, div2){
+			//- 	$("#" + div1 ).hide();
+			//- 	$("#" + div2 ).fadeIn();
+			//- 	document.form1.submit();
+			//- }
+			function alpha (){
+				document.getElementById("form1").style.display = 'none';
+				document.getElementById("form2").style.display = 'block';
+				document.form1.submit();
+			}
+			function callform2(){
+				document.form2.submit();
+			}
+	body
+		.tim-bar
+			img(src='resources/img/logo-tim.png')
+			div
+				a.loja(href="http://loja.tim.com.br/", target="blank") LOJA ONLINE
+				a.meu-tim(href="https://meutim.tim.com.br/", target="blank") MEU TIM
+				a.tim-site(href="http://www.tim.com.br/", target="blank") TIM.COM.BR
+		section.termos.numeros
+			h1 Números da sorte
+			| #if (!$passwordSent)
+			| #if($resultStatus)
+			| $resultMessage 
+			br
+			| #end
+			form(name='form1', id="form1" action='cupons-consulta', method='POST')
+				.textos-sorte
+					p Para consultar a listagem dos seus cupons insira o número do seu celular abaixo.
+					input#ddd.form-control(type='tel', name='ddd', placeholder='DDD', onkeydown='return numbers(event);', maxlength='2', onkeyup='toUnicode(this,this.value)', required='')
+					input#celular.form-control(type='tel', name='phone', placeholder='Celular', onkeydown='return numbers(event);', onkeyup='toUnicode(this,this.value)', maxlength='9', required='')
+					br
+					button.btn.btn-default.button-customize(type='submit', onclick="javascript: alpha();") CONFIRMAR
+			// ATENCAO! ESTE SEGUNDO FORM APARECE QUANDO O USUARIO PREENCHE O CAMPO COM O NUMERO DO CELULAR
+			| #else
+			form(name='form2', id="form2" action='upons-consulta', method='POST', style='display: none')
+				.textos-sorte
+					p Insira a senha que receber em seu celular no campo abaixo.
+					input#senha(name='senha', onkeydown='return numbers(event);', maxlength='4')
+					br
+					br
+					button.btn.btn-default.button-customize(type='submit', onclick='javascript: callform2();') CONFIRMAR
+			| #end
+
+		footer
+			.container
+				.menu
+					a(href="subscription") Home
+					a(href="regulamento") Regulamento
+					a(href="ganhadores") Ganhadores
+					a(href="faw") FAQ
+				.tim-na-rede
+					p TIM na rede: 
+					a.rede(href="https://twitter.com/TIMbrasil", style='background-position: 0 0;')
+						img(src="", alt="")
+					a.rede(href="https://www.facebook.com/timbrasil", style='background-position: -32px 0;')
+						img(src="", alt="")
+					a.rede(href="http://www.youtube.com/TIM", style='background-position: -64px 0;')
+						img(src="", alt="")
+				p Copyright TIM Celular 2017 - Todos os direitos reservados.
+				span Títulos de Capitalização da modalidade incentivo emitidos por Sul América Capitalização S.A , CNPJ nº 03.558.096/0001-04 e Processo SUSEP nº 15414.900879/2013-20. Sugestões de uso dos prêmios nos valores totais de R$ 500,00 e R$ 30.000,00, líquidos de IR. A aprovação deste Título pela SUSEP não implica, por parte da Autarquia, em incentivo ou recomendação a sua aquisição, representando, exclusivamente, sua adequação às normas em vigor. Leia o Regulamento completo no site. Imagens meramente ilustrativas. Ouvidoria Sulamérica 0800 725 3374
+		.hide
+			| #if( $pixel )
+			| $pixel
+			| #end
+			// Google Analytics
+			script.
+				(function(i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); (function() { ga('create', 'UA-55960374-3'); ga('set', 'campaignName', 'TIM Gourmet'); ga('set', 'campaignSource', 'movile'); ga('set', 'campaignMedium', '17910'); ga('send', 'pageview'); function addListener(element, type, callback) { if (element.addEventListener) element.addEventListener(type, callback); else if (element.attachEvent) element.attachEvent('on' + type, callback); }  })();
+			img(alt='imagem analytcs', src='/analytics/adt.gif?utmac=MO-40527776-2&utmac_all=MO-40527776-1&utmn=80920106&ANALYTICS_FLOW_TYPE=DEFAULT_ANALYTICS&utmr=-&utmp=%2Flp%2Ftimgourmet%2Fdefault%2Fsubscription&guid=ON&utm_campaign=TIM+Gourmet&utm_medium=null%2Fdefault%3A17910&utm_source=movile')
