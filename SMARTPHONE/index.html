@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8">
     <title>TIM Gourmet</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="resources/css/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico">
-    <!-- Google Tag Manager-->
+    <script>
+      function getMobileOperatingSystem() {
+      	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      	if (/android/i.test(userAgent)) {
+      		document.getElementById("smsButton").setAttribute("href", "sms:3040?body=TG");
+      	}
+      	// iOS detection from: http://stackoverflow.com/a/9039885/177710
+      	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      		document.getElementById("smsButton").setAttribute("href", "sms:/3040&body=TG");
+      	}
+      }
+    </script>
+  </head>
+  <body>
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -14,47 +27,26 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-WFC7RF3');
     </script>
-    <!-- End Google Tag Manager-->
-    <!-- Google Tag Manager (noscript)-->
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFC7RF3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript)-->
-  </head>
-  <body>
-    <div class="tim-bar"><img src="resources/img/logo-tim.png">
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFC7RF3" style="display:none;visibility:hidden" title="tag Manager"></iframe>
+    </noscript><a class="nav-block" href="#assinar">Pular para o formulário de assinatura</a>
+    <div class="tim-bar"><a href="subscription.html"><img class="logo-tim" src="resources/img/logo-tim.png" alt="Logotipo TIM"></a>
       <div><a class="loja" href="http://loja.tim.com.br/" target="blank">LOJA ONLINE</a><a class="meu-tim" href="https://meutim.tim.com.br/" target="blank">MEU TIM</a><a class="tim-site" href="http://www.tim.com.br/" target="blank">TIM.COM.BR</a></div>
     </div>
     <div class="menu"><a href="regulamento">Regulamento</a><a href="numeros-sorte">Números da sorte</a><a href="ganhadores">Ganhadores</a><a href="faq">FAQ</a></div>
     <section class="widget">
       <div><img src="resources/img/icon.png" alt="icone tim gourmet">
-        <p> 
+        <p>
           Traga as receitas do chef Claude Troisgros 
-          para sua casa e ainda <span>concorra a uma refeição com ele. </span>
-        </p>
-        <form name="assine" action="#springUrl( $subscriptionURL )" method="post" onsubmit="return validate();">
-          <div class="hide">
-            #if( $hiddenFieldsMap.entrySet() )
-            #foreach($hiddenField in $hiddenFieldsMap.entrySet())
-            <input type="hidden" name="$hiddenField.key" value="$hiddenField.value">
-                          #end
-                          #end
-          </div>
-          <input class="text ddd" id="ddd" type="tel" maxlength="2" name="ddd" placeholder="DDD" onkeyup="proximoCampo(this, 'phone')">
-          <input class="text tel" id="phone" type="tel" maxlength="9" name="phone" placeholder="Telefone">
-          <div class="center-termos">
-            <input id="check" type="checkbox" name="check">
-            <label for="check"><span></span>Li e aceito os <a href="termos.html">termos e condições de uso</a></label>
-          </div>
-          <input class="mobile-btn" id="sendPin" type="button" value="ASSINAR" name="sendPin" onclick="validate();">
-          <h5>Valor do serviço de R$ 3,99 por semana.<br><span>Experimente grátis por 3 dias.</span></h5><a href="https://play.google.com/store/apps/details?id=com.movile.portfolio.tim.gourmet" target="blank"><img src="resources/img/playstore-badge.png" alt=""></a>
-        </form>
-      </div><img src="resources/img/claude.png" alt="claude troisgros">
+          para sua casa e ainda <span>concorra a uma refeição com ele.</span>
+        </p><a class="assinar" id="smsButton">Quero cozinhar como chef! </a>
+        <p>Basta clicar no botão acima e enviar a mensagem que aparecerá na sua tela.</p><a href="https://play.google.com/store/apps/details?id=com.movile.portfolio.tim.gourmet" target="blank"><img src="resources/img/playstore-badge.png" alt="ícone de download na Play Store"></a>
+      </div><img src="resources/img/claude.png" alt="Chef Claude Troisgros">
     </section>
     <div class="content">
-      <section class="about" style="background-color: #00A5CC">
+      <section class="about" style="background-color: #00A5CC"><a class="nav-block" href="#receitas">Pular para o Receitas</a>
         <div class="container">
-          <div class="img"><img src="resources/img/nexus-about.png" alt="Tela TIM Gourmet"></div>
+          <div class="img"><img src="resources/img/nexus-about.png" alt="Tela ao aplicativo TIM Gourmet"></div>
           <div>
             <h1>Conheça o TIM Gourmet</h1>
             <p>O <span class="destaque">TIM gourmet </span>é um serviço completo para quem quer ter uma experiência gastronômica inesquecível! São receitas e segredos de culinária do renomado <span class="destaque">chef Claude Troisgros</span>, dicas de restaurantes e eventos gastronômicos imperdíveis que estão próximos a você.</p>
@@ -66,9 +58,9 @@
           </div>
         </div>
       </section>
-      <section class="feature feature-1">
+      <section class="feature feature-1" id="receitas"><a class="nav-block" href="#ifood">Pular para iFood</a>
         <div class="container">
-          <div><img class="icon" src="resources/img/icon-pan.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/icon-pan.png" alt="ícone de panela">
             <h1>Tenha receitas do Claude Troisgros</h1>
             <h1 class="mobile">Conheça os segredos do chef Claude Troisgros e surpreenda na cozinha!</h1>
             <p>Fique por dentro dos segredos de culinária do chef Claude Troisgros e surpreenda na cozinha! Saboreie já as novas tendências do mundo da gastronomia!</p>
@@ -76,19 +68,19 @@
           <div class="img"><img src="resources/img/nexus-feature1.png" alt="Tela TIM Gourmet"></div>
         </div>
       </section>
-      <section class="feature feature-2">
+      <section class="feature feature-2" id="ifood"><a class="nav-block" href="#dicas">Pular para Dicas</a>
         <div class="container">
           <div class="img"><img src="resources/img/nexus-feature2.png" alt="Tela TIM Gourmet"></div>
-          <div><img class="icon" src="resources/img/ifood.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/ifood.png" alt="Logotipo iFood">
             <h1>Está cansado? Peça um Delivery!</h1>
             <h1 class="mobile">Deu preguiça? Peça comida e a receba em sua casa pelo maior app de delivery do Brasil.</h1>
-            <p>Com o TIM gourmet Delivery, você poderá pedir comida e ela chegar na sua casa! Quer praticidade maior do que isso?</p>
+            <p>Com o iFood, integrado no TIM Gourmet, você poderá pedir comida e ela chegar na sua casa! Quer praticidade maior do que isso?</p>
           </div>
         </div>
       </section>
-      <section class="feature feature-3">
+      <section class="feature feature-3" id="dicas"><a class="nav-block" href="#eventos">Pular para Eventos</a>
         <div class="container">
-          <div><img class="icon" src="resources/img/icon-home.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/icon-home.png" alt="Ícone Restaurante">
             <h1>Dicas dos melhores restaurantes</h1>
             <h1 class="mobile">Conheça os melhores restaurantes da sua região.</h1>
             <p>Quer sair pra jantar e não sabe em qual lugar? O TIM gourmet te ajuda mostrando quais são os restaurantes mais próximos de você e as informações deles quanto a horário de funcionamento, preço… imperdível!</p>
@@ -96,69 +88,34 @@
           <div class="img"><img src="resources/img/nexus-feature3.png" alt="Tela TIM Gourmet"></div>
         </div>
       </section>
-      <section class="feature feature-4">
+      <section class="feature feature-4" id="eventos"><a class="nav-block" href="#footer">Pular para Rodapé</a>
         <div class="container">
           <div class="img"><img src="resources/img/nexus-feature4.png" alt="Tela TIM Gourmet"></div>
-          <div><img class="icon" src="resources/img/icon-note.png" alt="Tela TIM Gourmet">
+          <div><img class="icon" src="resources/img/icon-note.png" alt="Ícone Calendário">
             <h1>Conteúdo de eventos gastronômicos</h1>
             <h1 class="mobile">O TIM Gourmet ainda mostra os eventos que estão próximos de você</h1>
             <p>Fique sabendo quais são os melhores eventos gastronômicos que vão estar na sua cidade ou próximo a você!</p>
           </div>
         </div>
       </section>
+      <section><a class="assinar" href="sms:/3040&amp;body=TG" style="margin: 0; padding: 20px 0px">Quero cozinhar como chef!</a></section>
     </div>
-    <footer>
+    <footer id="footer">
       <div class="container">
         <div class="menu"><a href="regulamento">Regulamento</a><a href="numeros-sorte">Números da sorte</a><a href="ganhadores">Ganhadores</a><a href="faq">FAQ</a></div>
         <div class="tim-na-rede">
-          <p>TIM na rede: </p><a class="rede" href="https://twitter.com/TIMbrasil" style="background-position: 0 0"><img src="" alt=""></a><a class="rede" href="https://www.facebook.com/timbrasil" style="background-position: -32px 0"><img src="" alt=""></a><a class="rede" href="http://www.youtube.com/TIM" style="background-position: -64px 0"><img src="" alt=""></a>
+          <p>TIM na rede: </p><a class="rede" href="https://twitter.com/TIMbrasil" style="background-position: 0 0">twitter</a><a class="rede" href="https://www.facebook.com/timbrasil" style="background-position: -32px 0">facebook</a><a class="rede" href="http://www.youtube.com/TIM" style="background-position: -64px 0">youtube</a>
         </div>
         <p>Copyright TIM Celular 2017 - Todos os direitos reservados.</p><span>Títulos de Capitalização da modalidade incentivo emitidos por Sul América Capitalização S.A , CNPJ nº 03.558.096/0001-04 e Processo SUSEP nº 15414.900879/2013-20. Sugestões de uso dos prêmios nos valores totais de R$ 500,00 e R$ 30.000,00, líquidos de IR. A aprovação deste Título pela SUSEP não implica, por parte da Autarquia, em incentivo ou recomendação a sua aquisição, representando, exclusivamente, sua adequação às normas em vigor. Leia o Regulamento completo no site. Imagens meramente ilustrativas. Ouvidoria Sulamérica 0800 725 3374</span>
       </div>
     </footer>
-    <script type="text/javascript">
-      function toUnicode(elmnt,content){
-      	if (content.length==elmnt.maxLength){
-      		next=elmnt.tabIndex
-      		if (next<document.forms[0].elements.length){
-      			document.forms[0].elements[next].focus()
-      		}
-      	}
-      }
-      function validatePhone(numeroddd, numerocelular) {
-      	if (numeroddd == '' || numerocelular == '') {
-      		return false;
-      	}
-      	return true;
-      }
-      function validate(){
-      	var ddd = document.getElementById('ddd').value;
-      	var celular = document.getElementById('phone').value;
-      	var checkAccept = document.getElementById('check');
-      	if (!validatePhone(ddd, phone)) {
-      		alert('Informe seu número corretamente.');
-      		return false;
-      	}
-      	if (checkAccept != null && !checkAccept.checked) {
-      		alert('Por favor, aceite o termo de uso para continuar.');
-      		return false;
-      	}
-      	document.assine.submit();
-      }
-    </script>
-    <script type="text/javascript">
-      function proximoCampo(atual,proximo){
-      	if(atual.value.length >= atual.maxLength){
-      		document.getElementById(proximo).focus();
-      	}
-      }
-    </script>
     <div class="hide">
       #if( $pixel )
       $pixel
       #end
-      <!-- Google Analytics-->
-      <script>(function(i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); (function() { ga('create', 'UA-55960374-3'); ga('set', 'campaignName', 'TIM Gourmet'); ga('set', 'campaignSource', 'movile'); ga('set', 'campaignMedium', '17910'); ga('send', 'pageview'); function addListener(element, type, callback) { if (element.addEventListener) element.addEventListener(type, callback); else if (element.attachEvent) element.attachEvent('on' + type, callback); }  })();</script><img alt="imagem analytcs" src="/analytics/adt.gif?utmac=MO-40527776-2&amp;utmac_all=MO-40527776-1&amp;utmn=80920106&amp;ANALYTICS_FLOW_TYPE=DEFAULT_ANALYTICS&amp;utmr=-&amp;utmp=%2Flp%2Ftimgourmet%2Fdefault%2Fsubscription&amp;guid=ON&amp;utm_campaign=TIM+Gourmet&amp;utm_medium=null%2Fdefault%3A17910&amp;utm_source=movile">
+      #if( $analytics )
+      $analytics
+      #end
     </div>
   </body>
 </html>
